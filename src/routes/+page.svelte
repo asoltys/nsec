@@ -26,15 +26,19 @@
 	let npub = $state();
 
 	let getNsec = async () => {
-		const seed = await mnemonicToSeed(mnemonic);
-		const master = HDKey.fromMasterSeed(seed, versions);
-		const child = master.derive("m/44'/1237'/0'/0/0");
-		const pubkey = child.publicKey;
-		const sk = child.privateKey;
-		const pk = getPublicKey(sk);
+		try {
+			const seed = await mnemonicToSeed(mnemonic);
+			const master = HDKey.fromMasterSeed(seed, versions);
+			const child = master.derive("m/44'/1237'/0'/0/0");
+			const pubkey = child.publicKey;
+			const sk = child.privateKey;
+			const pk = getPublicKey(sk);
 
-		nsec = nip19.nsecEncode(sk);
-		npub = nip19.npubEncode(pk);
+			nsec = nip19.nsecEncode(sk);
+			npub = nip19.npubEncode(pk);
+		} catch (e) {
+			nsec = e.message;
+		}
 	};
 </script>
 
