@@ -60,6 +60,10 @@
 	</div>
 </div>
 
+<div style="position: fixed; bottom: 0px; height: 40px; text-align: center; width: 100%">
+	<a href="https://github.com/asoltys/nsec">github.com/asoltys/nsec</a>
+</div>
+
 <style>
 	textarea,
 	button {
