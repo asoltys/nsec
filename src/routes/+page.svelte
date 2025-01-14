@@ -1,6 +1,4 @@
 <script>
-	export const prerender = true;
-
 	import { onMount } from 'svelte';
 	import { bytesToHex, hexToBytes } from '@noble/hashes/utils';
 	import { HDKey } from '@scure/bip32';
