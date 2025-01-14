@@ -38,6 +38,7 @@
 			npub = nip19.npubEncode(pk);
 		} catch (e) {
 			nsec = e.message;
+			npub = '';
 		}
 	};
 </script>
